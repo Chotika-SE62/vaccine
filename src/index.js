@@ -1,17 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Vaccine from './components/Vaccine';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <div className='vaccine'>
+      <Vaccine
+        nameCompony="Astrazeneca"
+        nameInter="AZD1222"
+        produce="England"
+        technology="ไวรัส Adonovirus พาหะ"
+      />
+      <Vaccine
+        nameCompony="Phizer"
+        nameInter="BNT162"
+        produce="USA"
+        technology="mRNA"
+      />
+      <Vaccine
+        nameCompony="moderna"
+        nameInter="mRNA-1273"
+        produce="USA"
+        technology="mRNA"
+      />
+      <Vaccine
+        nameCompony="sinovac"
+        nameInter="Coronavac"
+        produce="China"
+        technology="วัคซันเชื้อตาย"
+      />
+    </div>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.querySelector('#root'));
