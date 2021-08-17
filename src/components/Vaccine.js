@@ -3,26 +3,26 @@ import './Vaccine.css';
 import VacImage from './VacImage';
 
 class Vaccine extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // nameCompony = "Astraxeneca",
+  constructor(props) {  //กำหนดค่าpropให้constructor
+    super(props); 
+    this.state = {  //กำหนดค่าshot have
+      // nameCompony="Astrazeneca",
       // nameInter: 'AZD1222',
-      // produce = "England",
-      // technology = "ไวรัส Adonvirus พาหะ",
-      short: '10000000',
+      // produce="England",
+      // technology="ไวรัส Adonovirus พาหะ",
+      shot: '10000000',
       have: true,
     };
   }
-//state = ดึงขึ้นมาจัดเก็บไว้ แล้วใช้งาน 
-    // component
-    //   this.setState({})
+
+  // componentDidMount() {
+  //   this.setState({ have: true });
+  // }
 
   render() {
-    if (!this.state.have) { //เงื่อไข,ค่าคงที่ในการแสดงผล
-      return <div>Not Found</div>;
+    if (!this.state.have) { //ถ้าไม่มีstate
+      return <div>Not found</div>;  //สั่งให้รีเทรินออกมาเป็นNot found
     }
-
     return (
       <div className="vaccine__list">
         <VacImage path="/img/1.jpg" />
@@ -30,15 +30,10 @@ class Vaccine extends React.Component {
         <div className="vaccine__item">{this.props.nameInter}</div>
         <div className="vaccine__item">{this.props.produce}</div>
         <div className="vaccine__item">{this.props.technology}</div>
-        <div>{this.state.short}</div> 
+        <div>{this.state.shot}</div>
         <div>{`${this.state.have}`}</div>
       </div>
     );
-    // } else {
-    //   return (
-    //     <div>Not found</div>
-    //   )
-    // }
   }
 }
 

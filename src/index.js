@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import Vaccine from './components/Vaccine';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  constructor(props) {  //กำหนดconstructor มีพารามิเตอร์เป็นprop
+    super(props); // 
+    this.state = {  //กำหนดค่าไอเท็ม มีข้อมูลวัคซีน ส่งโดยผ่านstate //เรนเดอร์ส่งค่าpropของวัคซีนออกมา //รีเทรินคลาสที่ชื่อvaccine //แมพนี้หรือพื้นที่การทำงานตรงนี้ส่งพารามิเตอร์เป็นไอเท็ม เรียกใช้เป็น item.ตามด้วยชื่อ เก็บไว้ในitemsRendered แล้วจะได้ค่ามาแสดงผล
       items: [
         {
           nameCompony: 'Astrazeneca',
@@ -36,7 +36,7 @@ class App extends React.Component {
       );
     });
 
-    return <div className="vaccine">
+    return <div className="vaccine">  
       {itemsRendered}
     </div>;
   }
